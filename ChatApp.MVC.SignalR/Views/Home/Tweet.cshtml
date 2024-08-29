@@ -1,0 +1,59 @@
+﻿@{
+    ViewData["Title"] = "Tweet";
+}
+
+<style>
+    #dropbox {
+        background-color: yellow;
+        height: 150px;
+        width: 150px;
+        float: right;
+        position: absolute;
+        font-size: larger;
+        vertical-align: central;
+        text-align: center;
+        top: 50px;
+        right: 50px;
+        border-radius: 20px;
+    }
+
+    img {
+        height: 200px;
+        width: 200px;
+        border-radius: 10px;
+        margin: 10px;     
+}
+
+</style>
+
+<script src="~/microsoft/signalr/dist/browser/signalr.js" asp-append-version="true"></script>
+
+<div class="card">
+    <header class="card-header">
+        <h1>Begin your conversation with your companions here</h1>
+    </header>
+    <div class="card-body">
+        <div>
+            <label for="txtInput">Say something:</label>
+            <input id="txtInput" class="form-control" required />
+        </div>
+        <div>
+            <input type="file" id="userFile" accept="image/*" />
+            <div id="dropbox">
+                You can Drag and Drop files here! 
+            </div>
+        </div>
+        <button class="btn btn-outline-success" id="btnSend">Poke</button>
+    </div>
+    <div class="card-footer">
+        <div id="chatLog"></div>
+    </div>
+</div>
+
+@section Scripts{
+	
+    <script src="~/js/tweet.js"></script>
+}
+
+
+
